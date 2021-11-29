@@ -6,6 +6,7 @@ Web application Twidder written in Javascript, CSS, HTML5 on frontend and Python
 gevent  
 gevent-websocket  
 flask
+Flask-Bcrypt
 
 ## How to run
 1. Run init() function in database_handler.py from server.py. See comment at bottom of server.py. This will create new database file *database.db*
