@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Twidder</title>
+		<meta charset="utf-8"/>
+		<link href="client.css" type="text/css" rel="stylesheet">
+		<script src="client.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/node-forge@0.7.0/dist/forge.min.js"></script>
+		<script type=”text/view” id="welcomeview">
+			<div id="container">
+				<!-- -------------------Logo---------------------- -->
+
+				<div id="wimg">
+					<img src="wimage.png" alt="Twidder">
+				</div>
+				<div id="welcomeviewforms">
+	
+					<!-- -------------------Login---------------------- -->
+
+					<form name="signin" id="signinform" method="POST" onSubmit="return signIn()">
+						<h3 class="header">Sign in!</h3>
+
+						<label for="signinemail">Email:</label>
+						<input type="email" name="email" id="signinemail" class="welcomepageinput" required/>
+			
+						<label for="signinpassword">Password:</label>
+						<input name="password" id="signinpassword" class="welcomepageinput" type="password" oninput="validatePasswordLength(this)" required/>
+			
+						<input type ="submit" value="Log in" class="welcomepagebutton" class="form-button"><br>
+						
+						<div id="signinmessage" class="formmessage"></div> 
+					</form>
+
+					<!-- -------------------Sign up---------------------- -->
+
+					<form name="signup" id="signupform" method="POST" onSubmit="return signUp()">
+						<h3 class=header>Sign up here!</h3>
+						
+						<label for="firstname">First name:</label>
+						<input name="firstname" id="firstname" class="welcomepageinput" class="welcomepageinput" required/>
+			
+						<label for="familyname">Family name:</label>
+						<input name="familyname"  id="familyname" class="welcomepageinput" required/>
+
+						<label for="gender">Gender:</label>
+						<select name="gender" id = "gender" required>
+							<option value="">Choose</option>
+							<option value = "male">Male</option>
+							<option value = "female">Female</option>
+						</select>
+			
+						<label for="city">City:</label>
+						<input name="city"  id="city" class="welcomepageinput" required/>
+						
+						<label for="country">Country:</label>
+						<input name="country"  id="country" class="welcomepageinput" required/>
+
+						<label for="email">Email:</label>
+						<input name="email" id="email" class="welcomepageinput" type="email" required/>
+			
+						<label for="signuppassword">Password:</label>
+						<input name="password" id="signuppassword" class="welcomepageinput" type="password" oninput="validatePasswordLength(this, false)" required/>
+			
+						<label for="repeatedpassword">Repeat<br>password:</label>
+						<input name="repeatedpassword" id="repeatedpassword" class="welcomepageinput" type="password" oninput="validatePasswordMatch(this, false)"  required/>
+			
+						<input type ="submit" value="Sign up" class="welcomepagebutton" class="form-button"><br>
+			
+						<div id="signupmessage" class="formmessage"></div>
+
+					</form>
+
+				</div>
+			</div>
+		</script>
+		<script type=”text/view” id="profileview">
+			<div class="tab-bar">
+				<button class="tab-button marked" onclick="openTab('hometab', event)">Home</button>
+				<button class="tab-button" onclick="openTab('browsetab', event)">Browse</button>
+				<button class="tab-button" onclick="openTab('accounttab', event)">Account</button>
+			</div> 
+		
+			<!-- -------------------Home---------------------- -->
+
+			<div id="hometab" class="tabs">
+				<h2 class="header">Home</h2>
+				<h3 class="header">Home is where the hearthstone is</h3>
+
+
+				<div id="userinformation" class="userinfo">
+					<h3 class="header">User information:</h3>
+					<!-- User information will be pasted here on login -->
+					<label id="emailinfo">Email: </label>
+					<label id="fnameinfo">First name: </label>
+					<label id="famnameinfo">Family name: </label>
+					<label id="genderinfo">Gender: </label>
+					<label id="cityinfo">City: </label>
+					<label id="countryinfo">Country: </label>
+				</div>
+
+				<div id="wall" class="wall">
+					<div class="postmessage">
+						<textarea name="wallmessage" id="wallmessage">What's on you mind?</textarea>
+						<button class="wall-button" onclick="postMessageOnWall()">Post</button>
+						<button class="wall-button" onclick="showWallMessages()">Update messages</button>
+					</div>
+					
+					<div id="wallmessages" class="wallmessages"></div>
+				</div>
+			</div>
+
+			<!-- -------------------Browse---------------------- -->
+
+		
+			<div id="browsetab" class="tabs" style="display:none">			
+				<h2 class="header">Browse</h2>
+				<div id="browseform">
+					<h3 class="header">Enter email of another user:</h3>
+					<form method="POST" onSubmit="return searchUser()">
+						<input name="Email" type="email" id="searchemail" required/>
+	
+						<input type ="submit" value="Browse user" id="browsebutton">
+					</form>
+				</div>
+				
+
+				<div id="otherusershome">
+					<div id="errorsearchuser" class="errormessage"></div>
+				</div>
+			</div>
+
+			<!-- -------------------Account---------------------- -->
+
+			<div id="accounttab" class="tabs" style="display:none">
+				<h2 class="header">Account</h2>
+				<form name="changepassword" method="POST" onSubmit="return changePassword()" id="changepassword">
+					<h3 class="header">Change password</h3>
+
+					<label for="oldpassword">Old password:</label>
+					<input name="Old password" id="oldpassword" class="changepasswordinput" type="password" required/>
+
+					<label for="newpassword1">New password:</label>
+					<input name="New password" id="newpassword1" class="changepasswordinput" type="password" oninput="validatePasswordLength(this, true)" required/>
+
+					<label for="repeatnewpassword2">Repeat password:</label>
+					<input name="Repeat password" id="repeatnewpassword2" class="changepasswordinput" type="password" oninput="validatePasswordMatch(this, true)" required/>
+
+					<input type="submit" id="changepasswordbutton" class="changepasswordinput" value="Change password"/>
+				</form>
+
+				<div id="errorchangepassword" class="errormessage"></div>
+
+				<button id="signout" onclick="signOut()">Sign out</button>
+
+			</div>
+		</script>
+	</head>
+	<body id="body">
+			<div id="displayview">
+				<!-- Welcome or profile view code will be copied to here -->
+			</div>
+	</body>
+</html>

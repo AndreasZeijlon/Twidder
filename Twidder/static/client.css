@@ -1,0 +1,248 @@
+body {
+    background-color:  lightblue;
+  }
+
+#displayview {
+  display: block;
+}
+
+/*--------------Welcomeview-------------------*/
+  
+#container {
+  width: 600px;
+  height: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+}
+
+#wimg {
+  float: left;
+  width: 340px;
+  height: 400px;
+  margin-right: 10px;
+  outline: 2px solid black;
+  outline-offset: -2px;
+}
+
+select {
+  float: right;
+  width: 120px;
+  margin-right: 5px;
+}
+
+#welcomeviewforms {
+  width: 250px;
+  height: 100%;
+  float: right;
+}
+
+#signinform {
+  outline: 2px solid black;
+  outline-offset: -2px;
+
+  background-color: white;
+  height: 120px;
+  overflow: auto;
+}
+
+#signupform {
+  margin-top: 10px;
+  outline: 2px solid black;
+  outline-offset: -2px;
+  background-color: white;
+  height: 270px;
+  overflow: auto;
+}
+
+
+
+.welcomepageinput {
+  float: right;
+  margin-right: 5px;
+  width: 120px;
+}
+
+.welcomepagebutton {
+  height: 25px;
+  width: 65px;
+  margin-top: 5px;
+  margin-right: 5px;
+  float:right;
+}
+
+
+/*---------------Profileview-------------------*/
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  resize: vertical;
+}
+
+.marked {
+  color: white;
+  background-color: grey;
+}
+
+.tab-button {
+  margin: 5px;
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.header {
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+}
+
+label {
+  clear: both;
+  text-align: left;
+  padding: 5px;
+  float: left;
+  margin-left: 5px;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+
+.formmessage {
+  float:left;
+  margin: 5px;
+  margin-right: 0px;
+  margin-left: 10px;
+  font-size: 14px;
+  color: red;
+  word-break: normal;
+  width: 170px;
+  min-height: 15px;
+}
+
+#signupmessage {
+  margin-top: 0px;
+}
+
+
+.tabs {
+  display:block;
+  background-color:  #3C374B;
+  width: 50%;
+  min-width: 600px;
+  height: 100%;
+  overflow: hidden;
+  outline: 2px solid black;
+  outline: -2px;
+}
+
+.userinfo {
+  width: 50%;
+  height: auto;
+  background-color: lightgrey;
+  float: left;
+  outline: 2px solid black;
+  outline-offset: -2px;
+}
+
+.wall {
+  width: 50%;
+  float: right;
+  background-color: lightgrey;
+  height: 100%;
+  outline: 2px solid black;
+  outline-offset: -2px;
+}
+
+
+.wallmessages {
+  height: 500px;
+  overflow: scroll;
+  margin: 0px;
+  word-break: break-all;
+}
+
+.postmessage {
+  padding: 5px;
+  outline: 2px solid black;
+  outline-offset: -2px;
+  background-color: lightgrey;
+}
+
+.message {
+  margin: 10px;
+  padding: 5px;
+  min-height: 50px;
+  outline: 1px solid black;
+  background-color: lightblue;
+}
+
+
+#browseform {
+  outline: 2px solid black;
+  outline-offset: -2px;
+  background-color: lightgrey;
+  width: 320px;
+  height:auto;
+  overflow:auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+#searchemail {
+  width: 180px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-top: 5px;
+}
+
+#browsebutton {
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+.errormessage {
+  text-align: center;
+  color: red;
+  margin: 10px;
+}
+
+/*-----------------Account tab-------------------*/
+
+#changepassword {
+  background-color: lightgrey;
+  width: 300px;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.changepasswordinput {
+  float: right;
+  margin-right: 10px;
+
+}
+
+#changepasswordbutton {
+  margin-top: 10px;
+}
+
+#signout {
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
+  margin: 15px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
